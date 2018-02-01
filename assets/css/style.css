@@ -3,5 +3,26 @@
 
 .input-form {
 	float:right; 
-	margin-top:90px;
 }
+
+button,
+div,
+form,
+input {
+    margin: 10px;
+}
+
+#animal-images {
+	margin: 50px;
+}
+
+.control-image {
+	width:250px; 
+	height:250px;
+	padding: 20px;
+}
+
+/*.control-image,
+.rating {
+	float: left;
+}*/
