@@ -1,6 +1,6 @@
 // On page load:
             // Set variables:
-            var sportsArray = ["mouse", "monkey", "panda"];
+            var sportsArray = ["soccer", "basketball", "tennis", "football", "baseball"];
                 
             // Run displayButtons function
             displayButtons();
@@ -31,11 +31,11 @@
             // prevent default
             event.preventDefault();
             // get the attribute of the button clicked, and store in a variables
-            var animal = $(this).attr("value");
+            var sport = $(this).attr("value");
             // clear out old images from the page (.empty)
-            $("#animal-images").empty();
+            $("#sport-images").empty();
             var key = "33f9J1NS1KNBBxVurx0rzBIJN8LngQN4";
-            var queryUrl = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=" + key;
+            var queryUrl = "https://api.giphy.com/v1/gifs/search?q=" + sport + "&api_key=" + key;
             // AJAX call to GIPHY
             $.ajax({
                 // URL | https://api.giphy.com/v1/gifs/search?api_key=YOUR_API_KEY&q=(THE BUTTON ATTRIBUTE WE GOT EARLIER)
@@ -50,7 +50,7 @@
                     for (var i = 0; i < response.data.length; i++) {
                         // create a jQuery div
                         var div = $("<div>")
-                        div.addClass("col-md-4")
+                        div.addClass("col-md-3")
                         // create a jQuery image
                         var image = $("<img>")
                         // Set the src attribute of the jQuery image to be image that we are looping through
@@ -73,26 +73,26 @@
                          // Append jQuery image to jQuery div
                         div.append(image);
                         // Append jQuery div to page
-                        $("#animal-images").append(div);
+                        $("#sport-images").append(div);
 
                     }
             });
         });
         // On click of form submit button - function
-        $("#add-animal").on("click", function(event){
+        $("#add-sport").on("click", function(event){
             event.preventDefault();
             // Create variable of user input text field
-            var inputButton = $("#animal-input").val().trim();
+            var inputButton = $("#sport-input").val().trim();
             // Push variable just created to array (buttonTitles)
             sportsArray.push(inputButton);
             // Clear the input text after clicking
-            $("#animal-input").val('');
+            $("#sport-input").val('');
             // Run displayButtons function
             displayButtons();
 
         });
         // On click of image div - function
-        $("#animal-images").on("click", ".control-image", function(){
+        $("#sport-images").on("click", ".control-image", function(){
             // Set variable equal to image clicked data-state attribute
             console.log("Clicked Image");
             var imageState = $(this).attr("data-state");

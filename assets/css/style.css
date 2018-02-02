@@ -1,8 +1,17 @@
 
+body {
+  font-family: 'Lato', sans-serif;
+}
 
+
+h1 {
+  font-family: 'Pacifico', cursive;
+}
 
 .input-form {
-	float:right; 
+	position: absolute;
+	top: 40px;
+	right: 150px;
 }
 
 button,
@@ -12,17 +21,17 @@ input {
     margin: 10px;
 }
 
-#animal-images {
+/*#animal-images {
 	margin: 50px;
-}
+}*/
 
 .control-image {
 	width:250px; 
 	height:250px;
-	padding: 20px;
+
 }
 
-/*.control-image,
+.control-image,
 .rating {
-	float: left;
-}*/
+	margin-left: 40%;
+}
