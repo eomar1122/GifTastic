@@ -47,7 +47,7 @@
                     console.log("here")
                     console.log(response.data.length);
                     // loop through response.data
-                    for (var i = 0; i < response.data.length; i++) {
+                    for (var i = 0; i < 10; i++) {
                         // create a jQuery div
                         var div = $("<div>")
                         div.addClass("col-md-3")
